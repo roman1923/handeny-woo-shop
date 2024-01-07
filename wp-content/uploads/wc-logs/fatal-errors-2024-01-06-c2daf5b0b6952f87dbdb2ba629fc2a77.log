@@ -1,0 +1,61 @@
+2024-01-06T11:41:37+00:00 CRITICAL Uncaught Error: Call to undefined function handeny_post_thumbnail() in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/template-parts/content-page.php:17
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template.php(792): require()
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template.php(725): load_template('/Users/romanzhu...', false, Array)
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/page.php(24): get_template_part('template-parts/...', 'page')
+#4 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#5 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#6 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#7 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/template-parts/content-page.php on line 17
+
+2024-01-06T11:41:52+00:00 CRITICAL Uncaught Error: Call to undefined function handeny_post_thumbnail() in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/template-parts/content-page.php:17
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template.php(792): require()
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template.php(725): load_template('/Users/romanzhu...', false, Array)
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/page.php(24): get_template_part('template-parts/...', 'page')
+#4 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#5 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#6 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#7 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/template-parts/content-page.php on line 17
+
+2024-01-06T13:09:31+00:00 CRITICAL Uncaught Error: Call to undefined function handeny_post_thumbnail() in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/template-parts/content-page.php:17
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template.php(792): require()
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template.php(725): load_template('/Users/romanzhu...', false, Array)
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/general-template.php(206): locate_template(Array, true, false, Array)
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/page.php(24): get_template_part('template-parts/...', 'page')
+#4 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#5 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#6 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#7 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/template-parts/content-page.php on line 17
+
+2024-01-06T19:01:47+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function esc_html(), 0 passed in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 18 and exactly 1 expected in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/formatting.php:4681
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(18): esc_html()
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/formatting.php on line 4681
+
+2024-01-06T19:02:00+00:00 CRITICAL Uncaught Error: Undefined constant "php" in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:18
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include()
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#3 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 18
+
+2024-01-06T19:02:05+00:00 CRITICAL Uncaught Error: Undefined constant "php" in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:18
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include()
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#3 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 18
+
