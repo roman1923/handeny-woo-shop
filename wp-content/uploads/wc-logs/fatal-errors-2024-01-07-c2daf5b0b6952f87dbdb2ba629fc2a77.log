@@ -1,0 +1,48 @@
+2024-01-07T19:21:59+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, string given in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/class-wp-query.php:2201
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/class-wp-query.php(2201): array_map('absint', '138, 142, 145, ...')
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/class-wp-query.php(3824): WP_Query->get_posts()
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/class-wp-query.php(3956): WP_Query->query(Array)
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(519): WP_Query->__construct(Array)
+#4 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#5 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#6 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#7 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/class-wp-query.php on line 2201
+
+2024-01-07T19:26:07+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, string given in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:513
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(513): array_map('intval', '138, 142, 145, ...')
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 513
+
+2024-01-07T19:26:12+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, string given in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:513
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(513): array_map('intval', '138, 142, 145, ...')
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 513
+
+2024-01-07T19:27:18+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, string given in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:513
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(513): array_map('intval', '138, 142, 145, ...')
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 513
+
+2024-01-07T19:27:19+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, string given in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:513
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(513): array_map('intval', '138, 142, 145, ...')
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 513
+
