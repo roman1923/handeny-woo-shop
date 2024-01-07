@@ -12740,4 +12740,7 @@ body {
 .wc-block-components-drawer__screen-overlay .wc-block-mini-cart__drawer .components-button .wc-block-components-button__text {
   color: white;
   background: #C3935B;
+}
+.wc-block-components-drawer__screen-overlay .wc-block-mini-cart__drawer .wc-block-components-button {
+  background: #C3935B !important;
 }/*# sourceMappingURL=main.css.map */
