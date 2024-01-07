@@ -127,10 +127,6 @@ add_action('wp_enqueue_scripts', 'enqueue_custom_fonts');
 /**
  * Implement the Custom Header feature.
  */
-function wpb_custom_new_menu() {
-	register_nav_menu('primary',__( 'Primary' ));
-}
-add_action( 'init', 'wpb_custom_new_menu' );
 
 function cc_mime_types($mimes) {
     $mimes['svg'] = 'image/svg+xml';
@@ -144,6 +140,19 @@ function add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
 add_action('after_setup_theme', 'add_woocommerce_support');
+
+
+function theme_register_footer_menus() {
+    register_nav_menus(
+        array(
+            'footer_menu_1' => esc_html__( 'Footer Menu 1', 'handeny' ),
+            'footer_menu_2' => esc_html__( 'Footer Menu 2', 'handeny' ),
+			'primary' => esc_html__('primary', 'handeny'),
+        )
+    );
+}
+
+add_action( 'init', 'theme_register_footer_menus' );
 
 
 

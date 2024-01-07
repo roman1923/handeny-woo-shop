@@ -42,6 +42,7 @@
 				wp_nav_menu(
 					array(
 						'menu_id'        => 'primary',
+						'theme_location' => 'primary',
 					)
 				);
 				?>
@@ -63,6 +64,7 @@
 					wp_nav_menu(
 						array(
 							'menu_id'        => 'primary',
+							'theme_location' => 'primary',
 						)
 					);
 				?>

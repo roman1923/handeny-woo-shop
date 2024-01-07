@@ -567,5 +567,4 @@ $posts = get_field('posts');
 		<div>
 	</div>
 </section>		
-
 <?php get_footer(); ?>
