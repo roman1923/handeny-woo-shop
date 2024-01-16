@@ -1,0 +1,81 @@
+2024-01-12T18:14:55+00:00 CRITICAL Uncaught ValueError: Unknown format specifier ";" in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:187
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(187): sprintf('<a href="%s" re...', '?add-to-cart=95', '95', '', 'add_to_cart_but...', 'simple', NULL)
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 187
+
+2024-01-12T18:15:29+00:00 CRITICAL Uncaught ValueError: Unknown format specifier ";" in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:190
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(190): sprintf('<div style="pos...', '?add-to-cart=95', '95', '', 'add_to_cart_but...', 'simple', NULL)
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 190
+
+2024-01-12T18:17:19+00:00 CRITICAL Uncaught ValueError: Unknown format specifier ";" in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:193
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(193): sprintf('<div style="pos...', '?add-to-cart=95', '95', '', 'add_to_cart_but...', 'simple', 0)
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 193
+
+2024-01-12T18:18:20+00:00 CRITICAL Uncaught ValueError: Unknown format specifier ";" in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:194
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(194): sprintf('<div style="pos...', '?add-to-cart=95', '95', '', 'add_to_cart_but...', 'simple', 0)
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 194
+
+2024-01-12T18:18:21+00:00 CRITICAL Uncaught ValueError: Unknown format specifier ";" in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:194
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(194): sprintf('<div style="pos...', '?add-to-cart=95', '95', '', 'add_to_cart_but...', 'simple', 0)
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 194
+
+2024-01-12T18:18:22+00:00 CRITICAL Uncaught ValueError: Unknown format specifier ";" in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:194
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(194): sprintf('<div style="pos...', '?add-to-cart=95', '95', '', 'add_to_cart_but...', 'simple', 0)
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 194
+
+2024-01-12T18:19:05+00:00 CRITICAL Uncaught ValueError: Unknown format specifier ";" in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:194
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(194): sprintf('<div style="pos...', '?add-to-cart=95', '95', '', 'add_to_cart_but...', 'simple', 0)
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 194
+
+2024-01-12T18:19:06+00:00 CRITICAL Uncaught ValueError: Unknown format specifier ";" in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:194
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(194): sprintf('<div style="pos...', '?add-to-cart=95', '95', '', 'add_to_cart_but...', 'simple', 0)
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 194
+
+2024-01-12T18:19:08+00:00 CRITICAL Uncaught ValueError: Unknown format specifier ";" in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php:194
+Stack trace:
+#0 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php(194): sprintf('<div style="pos...', '?add-to-cart=95', '95', '', 'add_to_cart_but...', 'simple', 0)
+#1 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-includes/template-loader.php(106): include('/Users/romanzhu...')
+#2 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-blog-header.php(19): require_once('/Users/romanzhu...')
+#3 /Users/romanzhurakivskyi/Local Sites/handeny/app/public/index.php(17): require('/Users/romanzhu...')
+#4 {main}
+  thrown in /Users/romanzhurakivskyi/Local Sites/handeny/app/public/wp-content/themes/handeny/front-page.php on line 194
+

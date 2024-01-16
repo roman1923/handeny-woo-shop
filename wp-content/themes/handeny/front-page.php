@@ -61,6 +61,9 @@ $posts = get_field('posts');
         endif;
         ?>
     </div>
+	<div class="mob-img">
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fp-main.png" alt="main-image-mobile">
+	</div>
 </section>
 
 <section class="girl-section">
@@ -120,15 +123,15 @@ $posts = get_field('posts');
 			<div class="col-md-5 col-lg-4 col-xl-3">
                 <div class="product-image--block">
 				<?php
-				$category = get_term_by('name', $first_product_category, 'product_cat');
+				$category = get_term_by('id', $first_product_category, 'product_cat');
 
 				if ($category) {
-					$category_id = $category->term_id;
-					$category_image = get_term_meta($category_id, 'thumbnail_id', true);
-					$image_url = wp_get_attachment_url($category_image);
-					$category_link = get_term_link($category_id, 'product_cat');
+					$category_image_id = get_term_meta($category->term_id, 'thumbnail_id', true);
 
-					if ($image_url) {
+					if ($category_image_id) {
+						$image_url = wp_get_attachment_url($category_image_id);
+						$category_link = get_term_link($category, 'product_cat');
+
 						echo '<div class="category-wrapper">';
 						echo '<a href="' . esc_url($category_link) . '">';
 						echo '<img class="product-category" src="' . esc_url($image_url) . '" alt="' . esc_attr($category->name) . '" />';
@@ -140,16 +143,15 @@ $posts = get_field('posts');
 					}
 				}
 				?>
+
                 </div>
 			</div>
             <div class="col-md-7 col-lg-8 col-xl-9">
                 <div class="product-block--slider">
 				<?php
-				$category = get_term_by('name', $first_product_category, 'product_cat');
+				$category = get_term_by('id', $first_product_category, 'product_cat');
 
 				if ($category) {
-					$category_id = $category->term_id;
-
 					$args = array(
 						'post_type'      => 'product',
 						'posts_per_page' => $product_count,
@@ -157,49 +159,55 @@ $posts = get_field('posts');
 							array(
 								'taxonomy' => 'product_cat',
 								'field'    => 'term_id',
-								'terms'    => $category_id,
+								'terms'    => $category->term_id,
 							),
 						),
-						'orderby'        => 'date', 
-        				'order'          => 'DESC',
+						'orderby'        => 'date',
+						'order'          => 'DESC',
 					);
-
+				
 					$products = new WP_Query($args);
-
+				
 					if ($products->have_posts()) :
 						echo '<div class="slick-slider">';
 						while ($products->have_posts()) : $products->the_post();
+							global $product;
+				
 							echo '<div class="category-wrapper">';
+							
 							// Display product image
 							echo '<img src="' . esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium')) . '" alt="' . esc_attr(get_the_title()) . '" />';
-
+							
 							echo '<div class="link-block">';
 							echo '<div class="links">';
-										// Display "Add to Cart" button
-										echo apply_filters('woocommerce_loop_add_to_cart_link',
-										sprintf('<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button %s product_type_%s"></a>',
-											esc_url($product->add_to_cart_url()),
-											esc_attr($product->get_id()),
-											esc_attr($product->get_sku()),
-											$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
-											esc_attr($product->product_type),
-										),
-										$product
-									);
-							echo '<a href="' . esc_url(get_permalink()) . '">';
-							echo '</a>';
+							
+							// Display "Add to Cart" button
+							echo apply_filters(
+								'woocommerce_loop_add_to_cart_link',
+								sprintf(
+									'<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button %s product_type_%s ajax_add_to_cart" data-quantity="1"></a>',
+									esc_url($product->add_to_cart_url()),
+									esc_attr($product->get_id()),
+									esc_attr($product->get_sku()),
+									$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
+									esc_attr($product->get_type())
+								),
+								$product
+							);
+				
+							echo '<a href="' . esc_url(get_permalink()) . '"></a>';
 							echo '</div>';
 							echo '</div>';
-
+				
 							// Display product title
 							echo '<h2>' . esc_html(get_the_title()) . '</h2>';
-
+				
 							// Display product description
 							echo '<p>' . esc_html(get_the_excerpt()) . '</p>';
-
+				
 							// Display product price
 							echo '<span class="price">' . $product->get_price_html() . '</span>';
-
+				
 							echo '</div>';
 						endwhile;
 						echo '</div>';
@@ -212,23 +220,26 @@ $posts = get_field('posts');
 			<div class="col-md-5 col-lg-4 col-xl-3">
                 <div class="product-image--block">
 				<?php
-				$category = get_term_by('name', $second_product_category, 'product_cat');
+				$category = get_term_by('id', $second_product_category, 'product_cat');
 
 				if ($category) {
-					$category_id = $category->term_id;
-					$category_image = get_term_meta($category_id, 'thumbnail_id', true);
-					$image_url = wp_get_attachment_url($category_image);
-					$category_link = get_term_link($category_id, 'product_cat');
+					$category_image_id = get_term_meta($category->term_id, 'thumbnail_id', true);
+				
+					if ($category_image_id) {
+						$image_url = wp_get_attachment_url($category_image_id);
+						$category_link = get_term_link($category, 'product_cat');
+				
 
-					if ($image_url) {
-						echo '<div class="category-wrapper">';
-						echo '<a href="' . esc_url($category_link) . '">';
-						echo '<img class="product-category" src="' . esc_url($image_url) . '" alt="' . esc_attr($category->name) . '" />';
-						echo '<h3 class="title2">' . esc_html($category->name) . '</h3>';
-						echo '<p class="desc2">' . esc_html($category->description) . '</p>';
-						echo '<p class="shop2">SHOP NOW</p>';
-						echo '</a>';
-						echo '</div>';
+						if ($image_url) {
+							echo '<div class="category-wrapper">';
+							echo '<a href="' . esc_url($category_link) . '">';
+							echo '<img class="product-category" src="' . esc_url($image_url) . '" alt="' . esc_attr($category->name) . '" />';
+							echo '<h3 class="title2">' . esc_html($category->name) . '</h3>';
+							echo '<p class="desc2">' . esc_html($category->description) . '</p>';
+							echo '<p class="shop2">SHOP NOW</p>';
+							echo '</a>';
+							echo '</div>';
+						}
 					}
 				}
 				?>
@@ -237,11 +248,9 @@ $posts = get_field('posts');
             <div class="col-md-7 col-lg-8 col-xl-9">
                 <div class="product-block--slider">
 				<?php
-				$category = get_term_by('name', $second_product_category, 'product_cat');
+				$category = get_term_by('id', $second_product_category, 'product_cat');
 
 				if ($category) {
-					$category_id = $category->term_id;
-
 					$args = array(
 						'post_type'      => 'product',
 						'posts_per_page' => $product_count_2,
@@ -249,49 +258,55 @@ $posts = get_field('posts');
 							array(
 								'taxonomy' => 'product_cat',
 								'field'    => 'term_id',
-								'terms'    => $category_id,
+								'terms'    => $category->term_id,
 							),
 						),
-						'orderby'        => 'date', 
-        				'order'          => 'DESC',
+						'orderby'        => 'date',
+						'order'          => 'DESC',
 					);
-
+				
 					$products = new WP_Query($args);
-
+				
 					if ($products->have_posts()) :
 						echo '<div class="slick-slider">';
 						while ($products->have_posts()) : $products->the_post();
+							global $product;
+				
 							echo '<div class="category-wrapper">';
+							
 							// Display product image
 							echo '<img src="' . esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium')) . '" alt="' . esc_attr(get_the_title()) . '" />';
-
+							
 							echo '<div class="link-block">';
 							echo '<div class="links">';
-										// Display "Add to Cart" button
-										echo apply_filters('woocommerce_loop_add_to_cart_link',
-										sprintf('<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button %s product_type_%s"></a>',
-											esc_url($product->add_to_cart_url()),
-											esc_attr($product->get_id()),
-											esc_attr($product->get_sku()),
-											$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
-											esc_attr($product->product_type),
-										),
-										$product
-									);
-							echo '<a href="' . esc_url(get_permalink()) . '">';
-							echo '</a>';
+							
+							// Display "Add to Cart" button
+							echo apply_filters(
+								'woocommerce_loop_add_to_cart_link',
+								sprintf(
+									'<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button %s product_type_%s ajax_add_to_cart" data-quantity="1"></a>',
+									esc_url($product->add_to_cart_url()),
+									esc_attr($product->get_id()),
+									esc_attr($product->get_sku()),
+									$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
+									esc_attr($product->get_type())
+								),
+								$product
+							);
+				
+							echo '<a href="' . esc_url(get_permalink()) . '"></a>';
 							echo '</div>';
 							echo '</div>';
-
+				
 							// Display product title
 							echo '<h2>' . esc_html(get_the_title()) . '</h2>';
-
+				
 							// Display product description
 							echo '<p>' . esc_html(get_the_excerpt()) . '</p>';
-
+				
 							// Display product price
 							echo '<span class="price">' . $product->get_price_html() . '</span>';
-
+				
 							echo '</div>';
 						endwhile;
 						echo '</div>';
@@ -389,13 +404,13 @@ $posts = get_field('posts');
 			<div class="col-md-6">
 				<div class="products-block">
 					<div class="first-cat">
-						<h3 class='product-name'><?php echo esc_html($offer_category); ?></h3>
+						<?php $category_term = get_term($offer_category, 'product_cat'); ?>
 						<?php
-						$category = get_term_by('name', $offer_category, 'product_cat');
+						$category_term = get_term($offer_category, 'product_cat');
 
-						if ($category) {
-							$category_id = $category->term_id;
-
+						if (!is_wp_error($category_term) && $category_term) {
+							echo '<h3 class="product-name">' . esc_html($category_term->name) . '</h3>';
+						
 							$args = array(
 								'post_type'      => 'product',
 								'posts_per_page' => 3,
@@ -403,89 +418,97 @@ $posts = get_field('posts');
 									array(
 										'taxonomy' => 'product_cat',
 										'field'    => 'term_id',
-										'terms'    => $category_id,
+										'terms'    => $offer_category,
 									),
 								),
 								'orderby'        => 'date', 
 								'order'          => 'DESC',
 							);
-
+						
 							$products = new WP_Query($args);
-
+						
 							if ($products->have_posts()) :
 								while ($products->have_posts()) : $products->the_post();
-								// Output product information
-								echo '<div class="products">';
-								
-								// Display product image
-								echo '<a href="' . esc_url(get_permalink($product->ID)) . '">';
-								echo '<img src="' . esc_url(get_the_post_thumbnail_url($product->ID, 'thumbnail')) . '" alt="' . esc_attr(get_the_title($product->ID)) . '" />';
-								echo '<div>';
-								// Display product name
-								echo '<h3>' . esc_html(get_the_title($product->ID)) . '</h3>';
-								
-								// Display product price
-								echo '<span class="price">' . $product->get_price_html() . '</span>';
-								echo '</div>';
-								echo '</a>';	
-								// Close the product link container
-								echo '</div>';
-
-							endwhile;
-							echo '</div>';
-							wp_reset_postdata();
-						endif;
+									// Output product information
+									echo '<div class="products">';
+									
+									// Display product image
+									echo '<a href="' . esc_url(get_permalink()) . '">';
+									echo '<img src="' . esc_url(get_the_post_thumbnail_url(get_the_ID(), 'thumbnail')) . '" alt="' . esc_attr(get_the_title()) . '" />';
+									echo '<div>';
+									// Display product name
+									echo '<h3>' . esc_html(get_the_title()) . '</h3>';
+									
+									// Display product price
+									echo '<span class="price">' . get_post_meta(get_the_ID(), '_price', true) . '</span>';
+									echo '</div>';
+									echo '</a>';    
+									// Close the product link container
+									echo '</div>';
+						
+								endwhile;
+								wp_reset_postdata();
+								echo '</div>'; // Close the products container
+							endif;
+						} else {
+							echo 'Product category not found or invalid ID.';
 						}
 						?>
 						<div class="second-cat">
-						<h3 class='product-name'><?php echo esc_html($offer_category_2); ?></h3>
+						<?php $category_term2 = get_term($offer_category_2, 'product_cat'); ?>
 						<?php
-						$category = get_term_by('name', $offer_category_2, 'product_cat');
+						$category_term2 = get_term($offer_category_2, 'product_cat');
 
-						if ($category) {
-							$category_id = $category->term_id;
-
-							$args = array(
-								'post_type'      => 'product',
-								'posts_per_page' => 3,
-								'tax_query'      => array(
-									array(
-										'taxonomy' => 'product_cat',
-										'field'    => 'term_id',
-										'terms'    => $category_id,
+						if (!is_wp_error($category_term2) && $category_term2) {
+							echo '<h3 class="product-name">' . esc_html($category_term2->name) . '</h3>';
+						
+							$category2 = get_term_by('id', $offer_category_2, 'product_cat');
+						
+							if ($category2) {
+								$args = array(
+									'post_type'      => 'product',
+									'posts_per_page' => 3,
+									'tax_query'      => array(
+										array(
+											'taxonomy' => 'product_cat',
+											'field'    => 'term_id',
+											'terms'    => $category2->term_id,
+										),
 									),
-								),
-								'orderby'        => 'date', 
-								'order'          => 'DESC',
-							);
-
-							$products = new WP_Query($args);
-
-							if ($products->have_posts()) :
-								while ($products->have_posts()) : $products->the_post();
-								// Output product information
-								echo '<div class="products">';
-								
-								// Display product image
-								echo '<a href="' . esc_url(get_permalink($product->ID)) . '">';
-								echo '<img src="' . esc_url(get_the_post_thumbnail_url($product->ID, 'thumbnail')) . '" alt="' . esc_attr(get_the_title($product->ID)) . '" />';
-								echo '<div>';
-								// Display product name
-								echo '<h3>' . esc_html(get_the_title($product->ID)) . '</h3>';
-								
-								// Display product price
-								echo '<span class="price">' . $product->get_price_html() . '</span>';
-								echo '</div>';
-								echo '</a>';	
-								// Close the product link container
-								echo '</div>';
-
-								endwhile;
-								echo '</div>';
-								wp_reset_postdata();
-							endif;
+									'orderby'        => 'date',
+									'order'          => 'DESC',
+								);
+						
+								$products = new WP_Query($args);
+						
+								if ($products->have_posts()) :
+									echo '<div class="products">';
+									while ($products->have_posts()) : $products->the_post();
+										// Output product information
+										echo '<div class="products">';
+										
+										// Display product image
+										echo '<a href="' . esc_url(get_permalink()) . '">';
+										echo '<img src="' . esc_url(get_the_post_thumbnail_url(get_the_ID(), 'thumbnail')) . '" alt="' . esc_attr(get_the_title()) . '" />';
+										echo '<div>';
+										// Display product name
+										echo '<h3>' . esc_html(get_the_title()) . '</h3>';
+										
+										// Display product price
+										echo '<span class="price">' . get_post_meta(get_the_ID(), '_price', true) . '</span>';
+										echo '</div>';
+										echo '</a>';    
+										// Close the product link container
+										echo '</div>';
+									endwhile;
+									echo '</div>'; // Close the products container
+									wp_reset_postdata();
+								endif;
 							}
-							?>
+						} else {
+							echo 'Product category not found or invalid ID.';
+						}
+						?>
 						</div>
 					</div>
 				</div>
@@ -505,11 +528,10 @@ $posts = get_field('posts');
 			</div>
 			<div class="blog-slider">
 			<?php
-			$postsArr = array_map('trim', explode(',', $posts));
 			$args = array(
 				'post_type'      => 'post',
-				'post__in'       => $postsArr,
-				'posts_per_page' => count($postsArr),
+				'post__in'       => $posts,
+				'posts_per_page' => count($posts),
 			);
 
 			// Get the posts
@@ -564,7 +586,7 @@ $posts = get_field('posts');
 			endif;
 			?>
 			</div>
-		<div>
+		</div>
 	</div>
 </section>		
 <?php get_footer(); ?>

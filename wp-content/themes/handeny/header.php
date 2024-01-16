@@ -49,7 +49,7 @@
 			</nav>
 			<nav class="navbar navbar-dark">
 				<div class="container-fluid">
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse">
 					<span class="navbar-toggler-icon" id="burger-icon"></span>
 				</button>
 				</div>
@@ -70,7 +70,14 @@
 				?>
    			</div>
 			<div class="login-registration">
-				<a href="#">Login / Register</a>
+				<?php
+					wp_nav_menu(
+						array(
+							'menu_id'        => 'login',
+							'theme_location' => 'login',
+						)
+					);
+				?>
 			</div>
 			<div class="search-cart">
 				<div class="search">
@@ -96,7 +103,7 @@
 					</form>
 				</div>
 				<div class="cart-block">
-					<?php dynamic_sidebar('sidebar-1'); ?>
+					<?php dynamic_sidebar('sideCart'); ?>
 				</div>
 			</div>
 		</div>

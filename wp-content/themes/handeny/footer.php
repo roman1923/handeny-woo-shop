@@ -15,28 +15,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-				<img src="<?php the_field('footer_logo', 'option'); ?>" alt="footer-logo">
-				<div class="desc">
-					<?php the_field('description', 'option'); ?>
-				</div>
-				<div class="location">
-					<img src="<?php the_field('location_logo', 'option'); ?>" alt="location-logo">
-					<?php the_field('location_text', 'option'); ?>
-				</div>
-				<div class="phone">
-					<img src="<?php the_field('phone_logo', 'option'); ?>" alt="phone-logo">
-					<?php the_field('phone_text', 'option'); ?>
-				</div>
-				<div class="mail">
-					<img src="<?php the_field('mail_logo', 'option'); ?>" alt="mail-logo">
-					<?php the_field('mail_text', 'option'); ?>
-				</div>
-
+				<?php dynamic_sidebar('footer_widget-col-one'); ?>
             </div>
             <div class="col-md-3">
 				<div class="posts">
 					<div class="posts-title mt-2">
-						<?php the_field('posts', 'option'); ?>
+						<?php dynamic_sidebar('footer_widget-col-two'); ?>
 					</div>
 					<?php
 						$args = array(
@@ -79,33 +63,15 @@
 				</div>
             </div>
             <div class="col-md-3">
-					<div class="stores-title mt-2">
-						<?php the_field('stores', 'option'); ?>
-					</div>
-					<?php
-					wp_nav_menu( array(
-						'theme_location' => 'footer_menu_1',
-						'menu_class'     => 'menu-class',
-						// Add other parameters as needed
-					) );
-					?>
+				<?php dynamic_sidebar('footer_widget-col-three'); ?>
             </div>
             <div class="col-md-3">
-					<div class="links-title mt-2">
-						<?php the_field('links', 'option'); ?>
-					</div>
-					<?php
-					wp_nav_menu( array(
-						'theme_location' => 'footer_menu_2',
-						'menu_class'     => 'menu-class',
-						// Add other parameters as needed
-					) );
-					?>
+				<?php dynamic_sidebar('footer_widget-col-four'); ?>
             </div>
         </div>
     </div>
 </footer>
-</div><!-- #page -->
+
 
 <?php wp_footer(); ?>
 
